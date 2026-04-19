@@ -29,7 +29,7 @@ export const education = [
     institution: "Usha Rama College of Engineering and Technology",
     location: "Vijayawada",
     score: "CGPA: 8.6 / 10",
-    year: "2020 – 2024",
+    year: "2025",
     icon: "🎓",
   },
   {
@@ -37,7 +37,7 @@ export const education = [
     institution: "NRI Junior College",
     location: "Guntur",
     score: "Percentage: 88.8%",
-    year: "2018 – 2020",
+    year: "2021",
     icon: "📚",
   },
   {
@@ -45,7 +45,7 @@ export const education = [
     institution: "B M R M Jhansi High School",
     location: "Darsi",
     score: "CGPA: 9.2 / 10",
-    year: "2018",
+    year: "2019",
     icon: "🏫",
   },
 ]
