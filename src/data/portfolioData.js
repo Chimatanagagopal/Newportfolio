@@ -169,3 +169,25 @@ export const achievements = [
   { text: "Represented school in Kho-Kho competitions", icon: "🏃" },
   { text: "Learning new tech and writing code daily", icon: "📖" },
 ]
+
+export const experience = [
+  {
+    role: "Software Developer",
+    company: "Techpixe",
+    startDate: "2024-11-01",
+    endDate: null,
+    type: "Full-Time",
+    location: "India",
+    description:
+      "Working as a Software Developer at Techpixe, contributing to modern web development projects and building scalable solutions.",
+    responsibilities: [
+      "Developing and maintaining web applications using modern tech stack",
+      "Collaborating with the team to design and implement new features",
+      "Writing clean, efficient, and maintainable code",
+      "Participating in code reviews and technical discussions",
+    ],
+    skills: ["React.js", "JavaScript", "Node.js", "Git"],
+    color: "#00f5d4",
+    icon: "💼",
+  },
+]
