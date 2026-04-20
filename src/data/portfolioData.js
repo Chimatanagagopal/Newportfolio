@@ -174,7 +174,7 @@ export const experience = [
   {
     role: "Software Developer",
     company: "Techpixe",
-    startDate: "2024-11-01",
+    startDate: "2025-11-01",
     endDate: null,
     type: "Full-Time",
     location: "India",
@@ -186,7 +186,7 @@ export const experience = [
       "Writing clean, efficient, and maintainable code",
       "Participating in code reviews and technical discussions",
     ],
-    skills: ["React.js", "JavaScript", "Node.js", "Git"],
+    skills: ["React.js", "JavaScript", "Node.js", "Python","Git"],
     color: "#00f5d4",
     icon: "💼",
   },
