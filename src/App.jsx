@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import LoadingScreen from './components/LoadingScreen'
-import CustomCursor from './components/CustomCursor'
 import ParticleBackground from './components/ParticleBackground'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -23,16 +22,8 @@ export default function App() {
         className={`transition-opacity duration-700 ${loading ? 'opacity-0' : 'opacity-100'}`}
         style={{ minHeight: '100vh' }}
       >
-        {/* Background */}
         <ParticleBackground />
-
-        {/* Custom cursor */}
-        <CustomCursor />
-
-        {/* Navigation */}
         <Navbar />
-
-        {/* Main content */}
         <main className="relative z-10">
           <Hero />
           <About />
@@ -42,7 +33,6 @@ export default function App() {
           <Certifications />
           <Contact />
         </main>
-
         <Footer />
       </div>
     </>

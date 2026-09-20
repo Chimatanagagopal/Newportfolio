@@ -1,26 +1,23 @@
-// ============================================================
-// PORTFOLIO DATA — Edit this file to update all content
-// ============================================================
-
 export const personalInfo = {
-  name: "Naga Gopal Chimata",
+  name: "Chimata Naga Gopal",
   shortName: "Naga Gopal",
-  title: "Software Developer",
+  title: "Python Developer & AI/ML Engineer",
   taglines: [
-    "Software Developer",
-    "Generative AI Enthusiast",
-    "Full Stack Developer",
-    "Problem Solver",
-    "React Developer",
+    "Python Developer",
+    "AI & ML Engineer",
+    "Generative AI Builder",
+    "Computer Vision Engineer",
+    "LLM & RAG Developer",
   ],
-  bio: "Hello! I'm Naga Gopal Chimata, an aspiring Software Developer passionate about modern technologies, web development, and Generative AI. I love solving real-world problems through code and collaborating with great minds.",
+  bio: "I build AI agents and generative pipelines — turning a simple brief into finished images, videos, and posters. From research to production, fast.",
   photoUrl: "https://chimatanagagopal.github.io/Portfolio/portfolio/passphoto.jpg",
-  resumeUrl: "#",
-  email: "chimatanagagopal95@gmail.com",
+  resumeUrl: "/Chimata_Naga_Gopal_Resume.pdf",
+  email: "nagagopalchimata26@gmail.com",
   phone: "+91 95811 36604",
   github: "https://github.com/Chimatanagagopal",
   linkedin: "https://linkedin.com/in/naga-gopal",
-  location: "Vijayawada, India",
+  portfolio: "https://gopalportfolio-theta-rouge.vercel.app/",
+  location: "Hyderabad, India",
 }
 
 export const education = [
@@ -28,7 +25,7 @@ export const education = [
     degree: "B.Tech (ECE)",
     institution: "Usha Rama College of Engineering and Technology",
     location: "Vijayawada",
-    score: "CGPA: 8.6 / 10",
+    score: "CGPA: 8.59 / 10",
     year: "2025",
     icon: "🎓",
   },
@@ -51,39 +48,53 @@ export const education = [
 ]
 
 export const skills = {
-  technical: [
-    { name: "React.js", level: 85, category: "Frontend" },
-    { name: "HTML & CSS", level: 90, category: "Frontend" },
-    { name: "JavaScript", level: 80, category: "Frontend" },
-    { name: "Bootstrap", level: 75, category: "Frontend" },
-    { name: "Python", level: 80, category: "Backend" },
-    { name: "Node.js", level: 70, category: "Backend" },
-    { name: "Express.js", level: 68, category: "Backend" },
-    { name: "MySQL", level: 72, category: "Database" },
-    { name: "MongoDB", level: 65, category: "Database" },
-    { name: "Git & GitHub", level: 85, category: "Tools" },
-    { name: "Generative AI", level: 70, category: "AI/ML" },
-    { name: "NumPy", level: 65, category: "AI/ML" },
+  categories: [
+    {
+      name: "GEN AI / LLMS",
+      color: "#00f5d4",
+      icon: "🤖",
+      items: ["AI Agents", "RAG", "NLP", "Transformers", "LLMs", "Prompt Engineering"],
+    },
+    {
+      name: "ML / DL",
+      color: "#8b5cf6",
+      icon: "🧠",
+      items: ["CNN", "LSTM", "ANN", "RNN", "Vision Transformer (ViT)", "Attention Mechanisms", "LoRA Fine-Tuning"],
+    },
+    {
+      name: "GENERATIVE",
+      color: "#ec4899",
+      icon: "🎨",
+      items: ["Diffusion Image Generation", "Open-Source Video Generation", "Background Removal", "Image Upscaling"],
+    },
+    {
+      name: "CV & MEDIA",
+      color: "#38bdf8",
+      icon: "👁️",
+      items: ["OpenCV", "YOLO", "MediaPipe", "FFmpeg", "Image Processing", "NumPy", "Pandas", "Matplotlib"],
+    },
+    {
+      name: "BACKEND",
+      color: "#f59e0b",
+      icon: "⚙️",
+      items: ["Python", "Node.js", "Express.js", "REST APIs", "FastAPI", "Async Job Processing", "SQL", "MySQL"],
+    },
+    {
+      name: "FRONTEND & TOOLS",
+      color: "#34d399",
+      icon: "🛠️",
+      items: ["React.js (Basics)", "JavaScript", "HTML", "CSS", "Bootstrap", "Git", "GitHub", "Postman", "Jupyter Notebook"],
+    },
   ],
-  soft: [
-    "Communication",
-    "Time Management",
-    "Teamwork",
-    "Creativity",
-    "Problem-Solving",
-  ],
-  interests: [
-    "Web Development",
-    "Python Development",
-    "Generative AI",
-  ],
+  soft: ["Problem-Solving", "Communication", "Teamwork", "Adaptability", "Attention to Detail"],
+  interests: ["Generative AI", "Computer Vision", "LLM Engineering", "RAG Systems", "AI Agents"],
 }
 
 export const projects = [
   {
     title: "CNN-Trans Model",
-    description: "A deep learning hybrid model combining CNN-LSTM and Vision Transformer for fundus image classification. Designed for accurate prediction of eye diseases.",
-    tags: ["Python", "Deep Learning", "CNN", "Vision Transformer", "LSTM"],
+    description: "A deep learning hybrid model combining CNN-LSTM and Vision Transformer for fundus image classification. Designed for accurate prediction of retinal diseases such as diabetic retinopathy and glaucoma, enabling faster clinical diagnosis through automated fundus image analysis.",
+    tags: ["Python", "CNN", "LSTM", "Vision Transformer", "Attention Mechanisms"],
     github: "https://github.com/Chimatanagagopal/finalYear.git",
     demo: "https://chimatanagagopal.github.io/finalYear",
     results: "https://chimatanagagopal.github.io/finalYear/results/finalresults.png",
@@ -172,22 +183,39 @@ export const achievements = [
 
 export const experience = [
   {
-    role: "Software Developer",
-    company: "Techpixe",
+    role: "Junior AI & ML Developer",
+    company: "Daksh Global Innovations Pvt Ltd",
+    companyNote: "formerly TechPixe",
     startDate: "2025-11-01",
     endDate: null,
     type: "Full-Time",
-    location: "India",
+    location: "Hyderabad, India",
     description:
-      "Working as a Software Developer at Techpixe, contributing to modern web development projects and building scalable solutions.",
-    responsibilities: [
-      "Developing and maintaining web applications using modern tech stack",
-      "Collaborating with the team to design and implement new features",
-      "Writing clean, efficient, and maintainable code",
-      "Participating in code reviews and technical discussions",
+      "Building AI agents and generative pipelines that turn natural-language briefs into finished production assets — images, posters, and short marketing videos. Working end-to-end from model selection and fine-tuning to async GPU job processing and web UI delivery.",
+    workProjects: [
+      {
+        title: "AI Creative Studio Agent — end-to-end Generative AI platform",
+        bullets: [
+          "Built an AI-agent platform that turns natural-language briefs into product images, promotional posters, and short marketing videos — one request yields a full campaign asset set.",
+          "Designed the agent's plan-and-execute workflow: understand the request, plan the steps, select generation tools, run them, and validate outputs before delivery.",
+          "Implemented business-specific RAG over products, offers, pricing, and brand guidelines so generated content reflects current campaign data and brand rules.",
+          "Fine-tuned open-source image-generation models with LoRA to reproduce specific products, brands, and visual styles for each business.",
+          "Integrated open-source image and video generation models with FFmpeg processing, background removal, upscaling, and format conversion.",
+          "Ran generation as async GPU jobs with automated quality validation; built the web UI to manage and download assets.",
+        ],
+      },
+      {
+        title: "FO2.AI – AI-Powered Content & Image Generation Platform",
+        bullets: [
+          "Built an AI-powered platform where users enter natural-language prompts to generate context-aware content and images using OpenAI APIs.",
+          "Designed prompt-engineering logic that interprets user inputs and generates optimized prompts for accurate content and image output.",
+          "Implemented subscription-based access with Free, Trial, and Premium plans including per-tier AI usage tracking.",
+          "Built backend APIs for user authentication, subscription management, and AI request handling.",
+        ],
+      },
     ],
-    skills: ["React.js", "JavaScript", "Node.js", "Python","Git"],
+    skills: ["Python", "Generative AI", "LLMs", "RAG", "LoRA", "OpenCV", "FFmpeg", "FastAPI", "React.js"],
     color: "#00f5d4",
-    icon: "💼",
+    icon: "🤖",
   },
 ]

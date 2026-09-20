@@ -110,8 +110,9 @@ export default function FloatingSphere() {
         scene.rotation.x += (my * 0.3 - scene.rotation.x) * 0.05
         scene.rotation.y += (mx * 0.3 - scene.rotation.y) * 0.05
 
-        // Float up/down
+        // Float up/down and right-to-left
         scene.position.y = Math.sin(t) * 0.1
+        scene.position.x = Math.sin(t * 0.6) * 0.12
 
         renderer.render(scene, camera)
       }

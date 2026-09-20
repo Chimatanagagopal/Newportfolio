@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { personalInfo } from '../data/portfolioData'
 
+const RESUME_URL = 'https://docs.google.com/document/d/14lcqJjERawU1uWpHHWboote_Mj2-BHpAmUNeMrwixcM/export?format=pdf'
+
 const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
@@ -75,7 +77,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <a
-          href={personalInfo.resumeUrl}
+          href={RESUME_URL}
           className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg border border-[#00f5d4]/40 text-[#00f5d4] text-sm font-medium hover:bg-[#00f5d4]/10 transition-all duration-300"
           style={{ boxShadow: '0 0 15px rgba(0,245,212,0.1)' }}
         >
