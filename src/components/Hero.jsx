@@ -34,10 +34,10 @@ export default function Hero() {
     }
 
     return () => clearTimeout(timeout)
-  }, [displayed, deleting, taglineIndex, taglines.length])
+  }, [displayed, deleting, taglineIndex])
 
-  const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -54,64 +54,70 @@ export default function Hero() {
       {/* Radial glow */}
       <div className="absolute inset-0 bg-radial-glow" />
 
-      {/* Corner accents */}
-      <div className="absolute top-20 left-8 w-32 h-32 border-l border-t border-[#00f5d4]/20 rounded-tl-2xl" />
-      <div className="absolute bottom-20 right-8 w-32 h-32 border-r border-b border-[#8b5cf6]/20 rounded-br-2xl" />
+      {/* Corner accents (hidden on small screens) */}
+      <div className="hidden md:block absolute top-20 left-8 w-32 h-32 border-l border-t border-[#00f5d4]/20 rounded-tl-2xl" />
+      <div className="hidden md:block absolute bottom-20 right-8 w-32 h-32 border-r border-b border-[#8b5cf6]/20 rounded-br-2xl" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-24 pb-12 w-full flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="max-w-7xl mx-auto w-full px-5 sm:px-8 lg:px-12 pt-24 pb-16 sm:pb-12 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12">
         {/* Left — text */}
-        <div className={`flex-1 transition-all duration-1000 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
+        <div
+          className={`flex-1 w-full min-w-0 text-center lg:text-left flex flex-col items-center lg:items-start transition-all duration-1000 ${
+            visible
+              ? 'opacity-100 translate-x-0 translate-y-0'
+              : 'opacity-0 translate-y-8 lg:translate-y-0 lg:-translate-x-12'
+          }`}
+        >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[#00f5d4]/20 text-xs font-mono text-[#00f5d4] mb-6 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass border border-[#00f5d4]/20 text-[11px] sm:text-xs font-mono text-[#00f5d4] mb-5 sm:mb-6 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-[#00f5d4] animate-pulse" />
             Available for opportunities
           </div>
 
           {/* Name */}
-          <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-4">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-4 break-words">
             <span className="text-white">Hi, I'm</span>
             <br />
             <span className="text-gradient">{personalInfo.shortName}</span>
           </h1>
 
           {/* Typewriter */}
-          <div className="flex items-center gap-2 mb-6 h-10">
-            <span className="text-white/40 font-mono text-lg">&gt;</span>
-            <span className="font-display text-2xl md:text-3xl font-semibold text-[#8b5cf6]">
+          <div className="flex items-center justify-center lg:justify-start gap-2 mb-5 sm:mb-6 min-h-[3.5rem] sm:min-h-[2.5rem]">
+            <span className="text-white/40 font-mono text-base sm:text-lg">&gt;</span>
+            <span className="font-display text-lg sm:text-2xl md:text-3xl font-semibold text-[#8b5cf6]">
               {displayed}
             </span>
-            <span className="cursor-blink text-[#00f5d4] text-3xl font-thin">|</span>
+            <span className="cursor-blink text-[#00f5d4] text-2xl sm:text-3xl font-thin">|</span>
           </div>
 
           {/* Bio */}
-          <p className="text-white/50 font-body text-lg leading-relaxed max-w-xl mb-10">
+          <p className="text-white/50 font-body text-base sm:text-lg leading-relaxed max-w-xl mb-8 sm:mb-10">
             {personalInfo.bio}
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-wrap gap-4 mb-10">
+          <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-3 sm:gap-4 mb-8 sm:mb-10">
             <button
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#00f5d4] to-[#8b5cf6] text-dark-900 font-display font-semibold text-sm tracking-wide hover:scale-105 active:scale-95 transition-all duration-300"
+              onClick={() => scrollTo('projects')}
+              className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#00f5d4] to-[#8b5cf6] text-dark-900 font-display font-semibold text-sm tracking-wide hover:scale-105 active:scale-95 transition-all duration-300"
               style={{ boxShadow: '0 0 30px rgba(0,245,212,0.3)' }}
             >
               View Projects
             </button>
             <button
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-3.5 rounded-xl glass border border-white/10 text-white font-display font-semibold text-sm tracking-wide hover:border-[#00f5d4]/40 hover:text-[#00f5d4] transition-all duration-300"
+              onClick={() => scrollTo('contact')}
+              className="w-full sm:w-auto px-8 py-3.5 rounded-xl glass border border-white/10 text-white font-display font-semibold text-sm tracking-wide hover:border-[#00f5d4]/40 hover:text-[#00f5d4] active:scale-95 transition-all duration-300"
             >
               Get In Touch
             </button>
           </div>
 
           {/* Social links */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center justify-center lg:justify-start gap-6">
             <a
               href={personalInfo.github}
               target="_blank"
               rel="noreferrer"
-              className="text-white/40 hover:text-[#00f5d4] transition-all duration-300 hover:scale-110"
+              className="p-1 text-white/40 hover:text-[#00f5d4] transition-all duration-300 hover:scale-110"
               aria-label="GitHub"
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -123,7 +129,7 @@ export default function Hero() {
               href={personalInfo.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="text-white/40 hover:text-[#00f5d4] transition-all duration-300 hover:scale-110"
+              className="p-1 text-white/40 hover:text-[#00f5d4] transition-all duration-300 hover:scale-110"
               aria-label="LinkedIn"
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -133,7 +139,7 @@ export default function Hero() {
 
             <a
               href={`mailto:${personalInfo.email}`}
-              className="text-white/40 hover:text-[#00f5d4] transition-all duration-300 hover:scale-110"
+              className="p-1 text-white/40 hover:text-[#00f5d4] transition-all duration-300 hover:scale-110"
               aria-label="Email"
             >
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -142,59 +148,84 @@ export default function Hero() {
               </svg>
             </a>
 
-            <div className="w-px h-6 bg-white/10 mx-2" />
-            <span className="text-white/25 text-xs font-mono">nagagopalchimata26@gmail.com</span>
+            {/* Email text: hidden on phones (the icon already links to it) */}
+            <div className="hidden sm:block w-px h-6 bg-white/10 mx-2" />
+            <span className="hidden sm:inline text-white/25 text-xs font-mono break-all">
+              {personalInfo.email}
+            </span>
           </div>
         </div>
 
         {/* Right — 3D sphere */}
         <div
-          className={`flex-shrink-0 transition-all duration-1200 delay-300 ${visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}
+          className={`flex-shrink-0 max-w-full transition-all duration-1000 delay-300 ${
+            visible
+              ? 'opacity-100 translate-x-0 translate-y-0'
+              : 'opacity-0 translate-y-8 lg:translate-y-0 lg:translate-x-12'
+          }`}
         >
-          <div className="relative">
+          {/* Scaled down on small screens; negative margin trims the leftover space */}
+          <div className="relative scale-[0.7] sm:scale-90 lg:scale-100 origin-center -my-10 sm:-my-4 lg:my-0">
             {/* Glow backdrop */}
             <div className="absolute inset-[-40px] rounded-full bg-[#00f5d4]/5 blur-3xl" />
             <FloatingSphere />
 
-  
+            {/* Top Right - RAG */}
+            <div
+              className="absolute top-0 right-0 lg:-top-4 lg:-right-4 whitespace-nowrap glass neon-border px-3 py-1.5 rounded-full text-xs font-mono text-[#00f5d4] animate-float"
+              style={{ animationDelay: '0s' }}
+            >
+              RAG
+            </div>
 
-{/* Top Right - RAG */}
-<div className="absolute -top-4 -right-4 glass neon-border px-3 py-1.5 rounded-full text-xs font-mono text-[#00f5d4] animate-float" style={{ animationDelay: '0s' }}>
-  RAG
-</div>
+            {/* Top Left - Generative AI */}
+            <div
+              className="absolute top-8 left-0 lg:-left-12 whitespace-nowrap glass border border-[#00f5d4]/30 px-3 py-1.5 rounded-full text-xs font-mono text-[#00f5d4] animate-float"
+              style={{ animationDelay: '0.5s' }}
+            >
+              Generative AI
+            </div>
 
-{/* Top Left - Generative AI */}
-<div className="absolute top-8 -left-12 glass border border-[#00f5d4]/30 px-3 py-1.5 rounded-full text-xs font-mono text-[#00f5d4] animate-float" style={{ animationDelay: '0.5s' }}>
-  Generative AI
-</div>
+            {/* Middle Left - Python */}
+            <div
+              className="absolute top-1/2 -translate-y-1/2 left-0 lg:-left-16 whitespace-nowrap glass border border-[#8b5cf6]/30 px-3 py-1.5 rounded-full text-xs font-mono text-[#8b5cf6] animate-float"
+              style={{ animationDelay: '1s' }}
+            >
+              Python
+            </div>
 
-{/* Middle Left - Python */}
-<div className="absolute top-1/2 -translate-y-1/2 -left-16 glass border border-[#8b5cf6]/30 px-3 py-1.5 rounded-full text-xs font-mono text-[#8b5cf6] animate-float" style={{ animationDelay: '1s' }}>
-  Python
-</div>
+            {/* Middle Right - OpenCV & YOLO */}
+            <div
+              className="absolute top-1/2 -translate-y-1/2 right-0 lg:-right-24 whitespace-nowrap glass border border-[#00f5d4]/30 px-3 py-1.5 rounded-full text-xs font-mono text-[#00f5d4] animate-float"
+              style={{ animationDelay: '1.5s' }}
+            >
+              OpenCV &amp; YOLO
+            </div>
 
-{/* Middle Right - Generative AI */}
-<div className="absolute top-1/2 -translate-y-1/2 -right-24 glass border border-[#00f5d4]/30 px-3 py-1.5 rounded-full text-xs font-mono text-[#00f5d4] animate-float" style={{ animationDelay: '1.5s' }}>
-  OpenCV &  YOLO
-</div>
+            {/* Bottom Left - LLMs */}
+            <div
+              className="absolute -bottom-4 left-1/4 whitespace-nowrap glass border border-[#38bdf8]/30 px-3 py-1.5 rounded-full text-xs font-mono text-[#38bdf8] animate-float"
+              style={{ animationDelay: '2s' }}
+            >
+              LLMs
+            </div>
 
-{/* Bottom Left - LLM's */}
-<div className="absolute -bottom-4 left-1/4 glass border border-[#38bdf8]/30 px-3 py-1.5 rounded-full text-xs font-mono text-[#38bdf8] animate-float" style={{ animationDelay: '2s' }}>
-  LLM's 
-</div>
-
-{/* Right - AI & ML */}
-<div className="absolute top-1/3 -right-16 glass border border-[#a78bfa]/30 px-3 py-1.5 rounded-full text-xs font-mono text-[#a78bfa] animate-float" style={{ animationDelay: '0.3s' }}>
-  AI & ML
-</div>
+            {/* Upper Right - AI & ML */}
+            <div
+              className="absolute top-1/4 right-0 lg:top-1/3 lg:-right-16 whitespace-nowrap glass border border-[#a78bfa]/30 px-3 py-1.5 rounded-full text-xs font-mono text-[#a78bfa] animate-float"
+              style={{ animationDelay: '0.3s' }}
+            >
+              AI &amp; ML
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator (hidden on phones so it doesn't overlap content) */}
       <button
-        onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 hover:text-[#00f5d4] transition-colors duration-300"
+        onClick={() => scrollTo('about')}
+        className="hidden sm:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-white/30 hover:text-[#00f5d4] transition-colors duration-300"
+        aria-label="Scroll to about section"
       >
         <span className="text-xs font-mono tracking-widest">SCROLL</span>
         <div className="w-5 h-8 rounded-full border border-current flex items-start justify-center pt-1.5">
